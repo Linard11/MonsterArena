@@ -7,6 +7,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 15500957408852190, guid: b4d7d739dc59e234a960b06cd94f5db2,
+        type: 3}
+      propertyPath: title
+      value: Fabio
+      objectReference: {fileID: 0}
+    - target: {fileID: 15500957408852190, guid: b4d7d739dc59e234a960b06cd94f5db2,
+        type: 3}
+      propertyPath: maxHealth
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 709676325569901361, guid: b4d7d739dc59e234a960b06cd94f5db2,
         type: 3}
       propertyPath: m_LocalPosition.y
