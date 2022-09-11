@@ -103,13 +103,25 @@ public class GameController : MonoBehaviour
         Monster challengerA = monsterPrefabs[challengerAIndex];
         Monster challengerB = monsterPrefabs[challengerBIndex];
         
+        // Spawn new monsters and update their UIs.
+        monsterA = RegisterNewMonster(challengerA, monsterSlotA, monsterAUI);
+        monsterB = RegisterNewMonster(challengerB, monsterSlotB, monsterBUI);
+        
         commentaryText.SetText($"{monsterA.GetTitle()} trifft auf {monsterB.GetTitle()}!");
     }
 
-    private void RegisterNewMonster(Monster monster, MonsterUI monsterUI)
+    private Monster RegisterNewMonster(Monster monsterPrefab, Transform monsterSlot, MonsterUI monsterUI)
     {
-        UpdateTitle(monster, monsterUI);
-        UpdateHealth(monster, monsterUI);
+        // TODO Remove old monsters in slots
+        
+        // Spawn monster from prefab.
+        Monster newSpawned = Instantiate(monsterPrefab, monsterSlot);
+        
+        // Link the UI to the monster.
+        UpdateTitle(newSpawned, monsterUI);
+        UpdateHealth(newSpawned, monsterUI);
+        
+        return newSpawned;
     }
 
     private void UpdateTitle(Monster monster, MonsterUI monsterUI)
