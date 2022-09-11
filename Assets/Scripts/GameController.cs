@@ -65,6 +65,8 @@ public class GameController : MonoBehaviour
             defender = monsterA;
             defenderUI = monsterAUI;
         }
+
+        attacker.Attack(defender);
     }
 
 
