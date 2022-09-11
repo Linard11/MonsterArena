@@ -1,15 +1,19 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Monster : MonoBehaviour
 {
     [SerializeField] private string title = "Monster";
-    [SerializeField] private float maxHealth = 10f;
 
-    [Space]
-    
+    [Header("Attack")]
     [SerializeField] private string attackName = "ATTACKENNAME";
     [SerializeField] private float attackStrength = 2f;
     [SerializeField] private GameObject attackEffect;
+    
+    [Header("Health")]
+    [SerializeField] private float maxHealth = 10f;
+    [SerializeField] private UnityEvent onDamaged;
+    [SerializeField] private UnityEvent onFainted;
 
     private float currentHealth;
 
@@ -37,6 +41,18 @@ public class Monster : MonoBehaviour
     {
         currentHealth += change;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+        if (change < 0)
+        {
+            if (currentHealth > 0)
+            {
+                onDamaged.Invoke();
+            }
+            else
+            {
+                onFainted.Invoke();
+            }
+        }
     }
 
     private string GetAttackString(Monster target, float damage)
