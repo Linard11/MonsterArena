@@ -88,6 +88,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1911343755222357057, guid: 463051232fbfab24abb48b0b0114e62e,
         type: 3}
+    - target: {fileID: 4368183965169281009, guid: b4d7d739dc59e234a960b06cd94f5db2,
+        type: 3}
+      propertyPath: title
+      value: Pflanzenmonster
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368183965169281009, guid: b4d7d739dc59e234a960b06cd94f5db2,
+        type: 3}
+      propertyPath: maxHealth
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5334484404986094802, guid: b4d7d739dc59e234a960b06cd94f5db2,
         type: 3}
       propertyPath: name
