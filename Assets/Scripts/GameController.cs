@@ -34,10 +34,7 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        RegisterNewMonster(monsterA, monsterAUI);
-        RegisterNewMonster(monsterB, monsterBUI);
-        
-        commentaryText.SetText($"{monsterA.GetTitle()} trifft auf {monsterB.GetTitle()}!");
+        StartNewBattle();
     }
     
     private void OnDisable()
@@ -84,6 +81,11 @@ public class GameController : MonoBehaviour
         isMonsterATurn = !isMonsterATurn;
     }
 
+    private void StartNewBattle()
+    {
+        
+        commentaryText.SetText($"{monsterA.GetTitle()} trifft auf {monsterB.GetTitle()}!");
+    }
 
     private void RegisterNewMonster(Monster monster, MonsterUI monsterUI)
     {
