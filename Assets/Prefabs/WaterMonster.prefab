@@ -93,6 +93,16 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 4368183965169281009, guid: b4d7d739dc59e234a960b06cd94f5db2,
+        type: 3}
+      propertyPath: attackName
+      value: Wasserattacke
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368183965169281009, guid: b4d7d739dc59e234a960b06cd94f5db2,
+        type: 3}
+      propertyPath: attackStrength
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5334484404986094802, guid: b4d7d739dc59e234a960b06cd94f5db2,
         type: 3}
       propertyPath: title
