@@ -98,10 +98,64 @@ public class Monster : MonoBehaviour
                     default:
                         throw new InvalidEnumArgumentException(nameof(defenderElement), (int)defenderElement, typeof(Element)); 
                 }
-            // TODO Add the cases for the other elements
+            case Element.Fire:
+                switch (defenderElement)
+                {
+                    case Element.Plant:
+                        return EffectiveDamageMultiplier;
+                    case Element.Normal:
+                    case Element.Fire:
+                        return NormalDamageMultiplier;
+                    case Element.Water:
+                    case Element.Stone:
+                        return IneffectiveDamageMultiplier;
+                    default:
+                        throw new InvalidEnumArgumentException(nameof(defenderElement), (int)defenderElement, typeof(Element)); 
+                }
+            case Element.Water:
+                switch (defenderElement)
+                {
+                    case Element.Fire:
+                    case Element.Stone:
+                        return EffectiveDamageMultiplier;
+                    case Element.Normal:
+                    case Element.Water:
+                        return NormalDamageMultiplier;
+                    case Element.Plant:
+                        return IneffectiveDamageMultiplier;
+                    default:
+                        throw new InvalidEnumArgumentException(nameof(defenderElement), (int)defenderElement, typeof(Element)); 
+                }
+            case Element.Stone:
+                switch (defenderElement)
+                {
+                    case Element.Normal:
+                    case Element.Fire:
+                        return EffectiveDamageMultiplier;
+                    case Element.Stone:
+                    case Element.Plant:
+                        return NormalDamageMultiplier;
+                    case Element.Water:
+                        return IneffectiveDamageMultiplier;
+                    default:
+                        throw new InvalidEnumArgumentException(nameof(defenderElement), (int)defenderElement, typeof(Element)); 
+                }
+            case Element.Plant:
+                switch (defenderElement)
+                {
+                    case Element.Water:
+                        return EffectiveDamageMultiplier;
+                    case Element.Normal:
+                    case Element.Stone:
+                    case Element.Plant:
+                        return NormalDamageMultiplier;
+                    case Element.Fire:
+                        return IneffectiveDamageMultiplier;
+                    default:
+                        throw new InvalidEnumArgumentException(nameof(defenderElement), (int)defenderElement, typeof(Element)); 
+                }
             default:
-                return 1;
-                //throw new InvalidEnumArgumentException(nameof(attackerElement), (int)attackerElement, typeof(Element));
+                throw new InvalidEnumArgumentException(nameof(attackerElement), (int)attackerElement, typeof(Element));
         }
     }
 
