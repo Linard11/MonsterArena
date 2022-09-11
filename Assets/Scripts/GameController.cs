@@ -1,6 +1,7 @@
 using TMPro;
 
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameController : MonoBehaviour
 {
@@ -11,15 +12,17 @@ public class GameController : MonoBehaviour
     [SerializeField] private MonsterUI monsterBUI;
 
     [SerializeField] private TextMeshProUGUI commentaryText;
+
+    private GameInput input;
     
     private void Awake()
     {
-        
+        input = new GameInput();
     }
 
     private void OnEnable()
     {
-        
+        input.Enable();
     }
 
     private void Start()
@@ -32,7 +35,7 @@ public class GameController : MonoBehaviour
     
     private void OnDisable()
     {
-        
+        input.Disable();
     }
 
     private void OnDestroy()
