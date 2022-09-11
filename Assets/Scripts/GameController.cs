@@ -12,6 +12,16 @@ public class GameController : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI commentaryText;
     
+    private void Awake()
+    {
+        
+    }
+
+    private void OnEnable()
+    {
+        
+    }
+
     private void Start()
     {
         RegisterNewMonster(monsterA, monsterAUI);
@@ -20,6 +30,16 @@ public class GameController : MonoBehaviour
         commentaryText.SetText($"{monsterA.GetTitle()} trifft auf {monsterB.GetTitle()}!");
     }
     
+    private void OnDisable()
+    {
+        
+    }
+
+    private void OnDestroy()
+    {
+        
+    }
+
     private void RegisterNewMonster(Monster monster, MonsterUI monsterUI)
     {
         UpdateTitle(monster, monsterUI);
