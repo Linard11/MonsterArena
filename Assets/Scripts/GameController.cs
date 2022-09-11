@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 using TMPro;
 
 using UnityEngine;
@@ -5,6 +7,8 @@ using UnityEngine.InputSystem;
 
 public class GameController : MonoBehaviour
 {
+    [SerializeField] private List<Monster> monsterPrefabs;
+    
     [SerializeField] private Monster monsterA;
     [SerializeField] private Monster monsterB;
 
