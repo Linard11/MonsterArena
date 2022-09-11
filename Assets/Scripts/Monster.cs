@@ -3,6 +3,10 @@ using UnityEngine.Events;
 
 public class Monster : MonoBehaviour
 {
+    public const float NormalDamageMultiplier = 1.0f;
+    public const float EffectiveDamageMultiplier = 1.5f;
+    public const float IneffectiveDamageMultiplier = 0.5f;
+
     [SerializeField] private string title = "Monster";
 
     [Header("Attack")]
@@ -25,7 +29,8 @@ public class Monster : MonoBehaviour
     
     public string Attack(Monster target)
     {
-        float damage = attackStrength;
+        float attackMultiplier = GetDamageMultiplier(this.attackElement, target.attackElement);
+        float damage = attackStrength * attackMultiplier;
         target.UpdateHealth(-damage);
 
         Instantiate(attackEffect, target.transform.position, Quaternion.identity);
@@ -68,6 +73,12 @@ public class Monster : MonoBehaviour
         }
 
         return text;
+    }
+
+    private float GetDamageMultiplier(Element attackerElement, Element defenderElement)
+    {
+        // TODO Calculate a damage multiplier based on the interacting elements
+        return 1;
     }
 
     public string GetTitle()
