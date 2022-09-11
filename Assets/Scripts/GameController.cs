@@ -14,6 +14,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI commentaryText;
 
     private GameInput input;
+
+    private bool isMonsterATurn = true;
     
     private void Awake()
     {
@@ -47,9 +49,22 @@ public class GameController : MonoBehaviour
     
     private void PerformNextAction(InputAction.CallbackContext context)
     {
-        Debug.Log("Enter Taste wurde gedrückt.");
-        commentaryText.SetText("Nächste Aktion.");
-        // TODO Implement attacking
+        Monster attacker;
+        Monster defender; // attackee
+        MonsterUI defenderUI;
+
+        if (isMonsterATurn) // Monster A greift an
+        {
+            attacker = monsterA;
+            defender = monsterB;
+            defenderUI = monsterBUI;
+        }
+        else // Monster B greift an
+        {
+            attacker = monsterB;
+            defender = monsterA;
+            defenderUI = monsterAUI;
+        }
     }
 
 
