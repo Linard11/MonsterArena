@@ -112,7 +112,8 @@ public class GameController : MonoBehaviour
 
     private Monster RegisterNewMonster(Monster monsterPrefab, Transform monsterSlot, MonsterUI monsterUI)
     {
-        // TODO Remove old monsters in slots
+        // Remove old monsters in slots.
+        ClearSlot(monsterSlot);
         
         // Spawn monster from prefab.
         Monster newSpawned = Instantiate(monsterPrefab, monsterSlot);
@@ -122,6 +123,15 @@ public class GameController : MonoBehaviour
         UpdateHealth(newSpawned, monsterUI);
         
         return newSpawned;
+    }
+
+    private void ClearSlot(Transform slot)
+    {
+        for (int i = slot.childCount - 1; i >= 0; i--)
+        {
+            Transform child = slot.GetChild(i);
+            Destroy(child.gameObject);
+        }
     }
 
     private void UpdateTitle(Monster monster, MonsterUI monsterUI)
