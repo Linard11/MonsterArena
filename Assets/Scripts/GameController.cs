@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour
     private void Awake()
     {
         input = new GameInput();
+        input.Player.Next.performed += PerformNextAction;
     }
 
     private void OnEnable()
@@ -40,8 +41,17 @@ public class GameController : MonoBehaviour
 
     private void OnDestroy()
     {
-        
+        input.Player.Next.performed -= PerformNextAction;
     }
+    
+    
+    private void PerformNextAction(InputAction.CallbackContext context)
+    {
+        Debug.Log("Enter Taste wurde gedrückt.");
+        commentaryText.SetText("Nächste Aktion.");
+        // TODO Implement attacking
+    }
+
 
     private void RegisterNewMonster(Monster monster, MonsterUI monsterUI)
     {
