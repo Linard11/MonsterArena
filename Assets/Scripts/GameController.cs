@@ -53,9 +53,9 @@ public class GameController : MonoBehaviour
     
     private void PerformNextAction(InputAction.CallbackContext context)
     {
-        // TODO Implement spawning new monsters
         if (monsterA.HasFainted() || monsterB.HasFainted())
         {
+            StartNewBattle();
             return;
         }
         
