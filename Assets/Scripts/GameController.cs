@@ -83,6 +83,22 @@ public class GameController : MonoBehaviour
 
     private void StartNewBattle()
     {
+        // Select a random number between 0 and the element count of the monster prefab list (exclusive).
+        int challengerAIndex = Random.Range(0, monsterPrefabs.Count);
+        int challengerBIndex = Random.Range(0, monsterPrefabs.Count);
+        
+        // Try again if picking the same two monsters.
+        if (monsterPrefabs.Count >= 2)
+        {
+            while (challengerAIndex == challengerBIndex)
+            {
+                challengerBIndex = Random.Range(0, monsterPrefabs.Count);
+            }
+        }
+
+        // Use the selected number to pick the corresponding monster.
+        Monster challengerA = monsterPrefabs[challengerAIndex];
+        Monster challengerB = monsterPrefabs[challengerBIndex];
         
         commentaryText.SetText($"{monsterA.GetTitle()} trifft auf {monsterB.GetTitle()}!");
     }
