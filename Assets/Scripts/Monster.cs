@@ -17,12 +17,14 @@ public class Monster : MonoBehaviour
         currentHealth = maxHealth;
     }
     
-    public void Attack(Monster target)
+    public string Attack(Monster target)
     {
         float damage = attackStrength;
         target.UpdateHealth(-damage);
+
+        return GetAttackString(target, damage);
     }
-    
+
     public bool HasFainted()
     {
         return currentHealth == 0;
@@ -32,6 +34,20 @@ public class Monster : MonoBehaviour
     {
         currentHealth += change;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+    }
+
+    private string GetAttackString(Monster target, float damage)
+    {
+        string text = $"{title} wendet {attackName} an.";
+
+        text += $" {target.title} erleidet {damage:F1} Schaden.";
+
+        if (target.HasFainted())
+        {
+            text += $" {target.title} ist ohnmächtig geworden.";
+        }
+
+        return text;
     }
 
     public string GetTitle()
