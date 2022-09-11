@@ -14,8 +14,25 @@ public class GameController : MonoBehaviour
     
     private void Start()
     {
-        
+        RegisterNewMonster(monsterA, monsterAUI);
+        RegisterNewMonster(monsterB, monsterBUI);
         
         commentaryText.SetText($"{monsterA.GetTitle()} trifft auf {monsterB.GetTitle()}!");
+    }
+    
+    private void RegisterNewMonster(Monster monster, MonsterUI monsterUI)
+    {
+        UpdateTitle(monster, monsterUI);
+        UpdateHealth(monster, monsterUI);
+    }
+
+    private void UpdateTitle(Monster monster, MonsterUI monsterUI)
+    {
+        
+    }
+
+    private void UpdateHealth(Monster monster, MonsterUI monsterUI)
+    {
+        
     }
 }
