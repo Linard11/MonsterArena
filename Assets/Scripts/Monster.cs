@@ -11,4 +11,19 @@ public class Monster : MonoBehaviour
     {
         currentHealth = maxHealth;
     }
+    
+    public string GetTitle()
+    {
+        return title;
+    }
+
+    public float GetMaxHealth()
+    {
+        return maxHealth;
+    }
+
+    public float GetCurrentHealth()
+    {
+        return currentHealth;
+    }
 }
