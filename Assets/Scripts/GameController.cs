@@ -28,11 +28,11 @@ public class GameController : MonoBehaviour
 
     private void UpdateTitle(Monster monster, MonsterUI monsterUI)
     {
-        
+        monsterUI.UpdateTitle(monster.GetTitle());
     }
 
     private void UpdateHealth(Monster monster, MonsterUI monsterUI)
     {
-        
+        monsterUI.UpdateHealth(monster.GetCurrentHealth(), monster.GetMaxHealth());
     }
 }
