@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -81,8 +83,26 @@ public class Monster : MonoBehaviour
 
     private float GetDamageMultiplier(Element attackerElement, Element defenderElement)
     {
-        // TODO Calculate a damage multiplier based on the interacting elements
-        return 1;
+        switch (attackerElement)
+        {
+            case Element.Normal:
+                switch (defenderElement)
+                {
+                    case Element.Normal:
+                    case Element.Fire:
+                    case Element.Water:
+                    case Element.Plant:
+                        return NormalDamageMultiplier;
+                    case Element.Stone:
+                        return IneffectiveDamageMultiplier;
+                    default:
+                        throw new InvalidEnumArgumentException(nameof(defenderElement), (int)defenderElement, typeof(Element)); 
+                }
+            // TODO Add the cases for the other elements
+            default:
+                return 1;
+                //throw new InvalidEnumArgumentException(nameof(attackerElement), (int)attackerElement, typeof(Element));
+        }
     }
 
     public string GetTitle()
