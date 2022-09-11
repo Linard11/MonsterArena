@@ -11,4 +11,11 @@ public class GameController : MonoBehaviour
     [SerializeField] private MonsterUI monsterBUI;
 
     [SerializeField] private TextMeshProUGUI commentaryText;
+    
+    private void Start()
+    {
+        
+        
+        commentaryText.SetText($"{monsterA.GetTitle()} trifft auf {monsterB.GetTitle()}!");
+    }
 }
