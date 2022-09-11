@@ -8,6 +8,7 @@ public class Monster : MonoBehaviour
     [Header("Attack")]
     [SerializeField] private string attackName = "ATTACKENNAME";
     [SerializeField] private float attackStrength = 2f;
+    [SerializeField] private Element attackElement = Element.Normal;
     [SerializeField] private GameObject attackEffect;
     
     [Header("Health")]
