@@ -67,6 +67,7 @@ public class GameController : MonoBehaviour
         }
 
         attacker.Attack(defender);
+        UpdateHealth(defender, defenderUI);
     }
 
 
