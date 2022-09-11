@@ -49,6 +49,12 @@ public class GameController : MonoBehaviour
     
     private void PerformNextAction(InputAction.CallbackContext context)
     {
+        // TODO Implement spawning new monsters
+        if (monsterA.HasFainted() || monsterB.HasFainted())
+        {
+            return;
+        }
+        
         Monster attacker;
         Monster defender; // attackee
         MonsterUI defenderUI;
@@ -70,6 +76,8 @@ public class GameController : MonoBehaviour
         UpdateHealth(defender, defenderUI);
         
         commentaryText.SetText(attackDescription);
+
+        isMonsterATurn = !isMonsterATurn;
     }
 
 
