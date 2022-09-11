@@ -69,9 +69,14 @@ public class Monster : MonoBehaviour
 
         text += $" {target.title} erleidet {damage:F1} Schaden.";
 
-        // TODO Add additional description based on the damage multiplier
-        // " Es war sehr effektive!" for a multiplier above 1.01f
-        // " Es war nicht sehr effektiv!" for a multiplier below 0.99f
+        if (multiplier > 1.01f)
+        {
+            text += " Es war sehr effektiv!";
+        }
+        else if (multiplier < 0.99f)
+        {
+            text += " Es war nicht sehr effektiv!";
+        }
         
         if (target.HasFainted())
         {
