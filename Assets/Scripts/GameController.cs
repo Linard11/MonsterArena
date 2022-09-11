@@ -8,15 +8,18 @@ using UnityEngine.InputSystem;
 public class GameController : MonoBehaviour
 {
     [SerializeField] private List<Monster> monsterPrefabs;
-    
-    [SerializeField] private Monster monsterA;
-    [SerializeField] private Monster monsterB;
+
+    [SerializeField] private Transform monsterSlotA;
+    [SerializeField] private Transform monsterSlotB;
 
     [SerializeField] private MonsterUI monsterAUI;
     [SerializeField] private MonsterUI monsterBUI;
 
     [SerializeField] private TextMeshProUGUI commentaryText;
 
+    private Monster monsterA;
+    private Monster monsterB;
+    
     private GameInput input;
 
     private bool isMonsterATurn = true;
