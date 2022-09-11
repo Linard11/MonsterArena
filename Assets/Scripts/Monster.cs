@@ -35,7 +35,7 @@ public class Monster : MonoBehaviour
 
         Instantiate(attackEffect, target.transform.position, Quaternion.identity);
 
-        return GetAttackString(target, damage);
+        return GetAttackString(target, damage, attackMultiplier);
     }
 
     public bool HasFainted()
@@ -61,12 +61,16 @@ public class Monster : MonoBehaviour
         }
     }
 
-    private string GetAttackString(Monster target, float damage)
+    private string GetAttackString(Monster target, float damage, float multiplier)
     {
         string text = $"{title} wendet {attackName} an.";
 
         text += $" {target.title} erleidet {damage:F1} Schaden.";
 
+        // TODO Add additional description based on the damage multiplier
+        // " Es war sehr effektive!" for a multiplier above 1.01f
+        // " Es war nicht sehr effektiv!" for a multiplier below 0.99f
+        
         if (target.HasFainted())
         {
             text += $" {target.title} ist ohnmächtig geworden.";
