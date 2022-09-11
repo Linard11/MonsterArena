@@ -9,6 +9,7 @@ public class Monster : MonoBehaviour
     
     [SerializeField] private string attackName = "ATTACKENNAME";
     [SerializeField] private float attackStrength = 2f;
+    [SerializeField] private GameObject attackEffect;
 
     private float currentHealth;
 
@@ -21,6 +22,8 @@ public class Monster : MonoBehaviour
     {
         float damage = attackStrength;
         target.UpdateHealth(-damage);
+
+        Instantiate(attackEffect, target.transform.position, Quaternion.identity);
 
         return GetAttackString(target, damage);
     }
