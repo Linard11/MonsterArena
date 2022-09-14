@@ -93,5 +93,15 @@ PrefabInstance:
       propertyPath: attackName
       value: NormalAttacke
       objectReference: {fileID: 0}
+    - target: {fileID: 8739812065879036162, guid: b4d7d739dc59e234a960b06cd94f5db2,
+        type: 3}
+      propertyPath: title
+      value: Crewmate
+      objectReference: {fileID: 0}
+    - target: {fileID: 8739812065879036162, guid: b4d7d739dc59e234a960b06cd94f5db2,
+        type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4d7d739dc59e234a960b06cd94f5db2, type: 3}
