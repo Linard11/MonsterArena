@@ -53,6 +53,16 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1898993661815126497, guid: b4d7d739dc59e234a960b06cd94f5db2,
+        type: 3}
+      propertyPath: attackName
+      value: Megablast
+      objectReference: {fileID: 0}
+    - target: {fileID: 1898993661815126497, guid: b4d7d739dc59e234a960b06cd94f5db2,
+        type: 3}
+      propertyPath: attackStrength
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2611716129881928120, guid: b4d7d739dc59e234a960b06cd94f5db2,
         type: 3}
       propertyPath: m_RootOrder
