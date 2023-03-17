@@ -18,6 +18,16 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1419635320919588218, guid: b4d7d739dc59e234a960b06cd94f5db2,
+        type: 3}
+      propertyPath: attackName
+      value: Steinattacke
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419635320919588218, guid: b4d7d739dc59e234a960b06cd94f5db2,
+        type: 3}
+      propertyPath: attackStrength
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2611716129881928120, guid: b4d7d739dc59e234a960b06cd94f5db2,
         type: 3}
       propertyPath: m_RootOrder
