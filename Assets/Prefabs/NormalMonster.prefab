@@ -18,6 +18,16 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 584071240650347725, guid: b4d7d739dc59e234a960b06cd94f5db2,
+        type: 3}
+      propertyPath: attackName
+      value: Tackle
+      objectReference: {fileID: 0}
+    - target: {fileID: 584071240650347725, guid: b4d7d739dc59e234a960b06cd94f5db2,
+        type: 3}
+      propertyPath: attackStrength
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2611716129881928120, guid: b4d7d739dc59e234a960b06cd94f5db2,
         type: 3}
       propertyPath: m_RootOrder
